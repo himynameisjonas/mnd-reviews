@@ -1,6 +1,9 @@
 Reviews::Application.routes.draw do
+
   root :to => "venues#index"
-  resources :venues
+  resources :venues do
+    resources :reviews
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

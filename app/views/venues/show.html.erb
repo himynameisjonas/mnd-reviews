@@ -23,3 +23,34 @@
 
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
 <%= link_to 'Back', venues_path %>
+
+
+<h1>Listing reviews</h1>
+
+<table>
+  <tr>
+    <th>Review</th>
+    <th>Other</th>
+    <th>Rating</th>
+    <th>Author</th>
+    <th>Venue</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reviews.each do |review| %>
+  <tr>
+    <td><%= review.review %></td>
+    <td><%= review.other %></td>
+    <td><%= review.rating %></td>
+    <td><%= review.author %></td>
+    <td><%= review.venue_id %></td>
+    <td><%= link_to 'Edit', edit_venue_review_path(@venue,review) %></td>
+    <td><%= link_to 'Destroy', venue_review_path(@venue,review), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Review', new_venue_review_path(@venue) %>

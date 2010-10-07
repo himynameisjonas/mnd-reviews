@@ -14,6 +14,7 @@ class VenuesController < ApplicationController
   # GET /venues/1.xml
   def show
     @venue = Venue.find(params[:id])
+    @reviews = @venue.reviews
 
     respond_to do |format|
       format.html # show.html.erb
