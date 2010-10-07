@@ -1,4 +1,5 @@
 Reviews::Application.routes.draw do
+  root :to => "venues#index"
   resources :venues
 
   # The priority is based upon order of creation:
