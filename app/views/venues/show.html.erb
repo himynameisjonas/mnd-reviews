@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @venue.name %>
-</p>
+<h1><%= @venue.name %></h1>
 
 <p>
   <b>Adress:</b>
@@ -11,29 +7,27 @@
 </p>
 
 <p>
-  <b>Type:</b>
-  <%= @venue.type %>
+  <b>Typ:</b>
+  <%= @venue.type_of_food %>
 </p>
 
 <p>
-  <b>Price:</b>
+  <b>Prisklass:</b>
   <%= @venue.price %>
 </p>
 
 
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
-<%= link_to 'Back', venues_path %>
+<%= link_to 'Edit', edit_venue_path(@venue) %>
 
-
-<h1>Listing reviews</h1>
+<h2>Recensioner</h2>
 
 <table>
   <tr>
-    <th>Review</th>
-    <th>Other</th>
-    <th>Rating</th>
-    <th>Author</th>
-    <th>Venue</th>
+    <th>Omdöme</th>
+    <th>Övrigt</th>
+    <th>Betyg (1-5)</th>
+    <th>Rapporterad av</th>
+    <th>Testad den</th>
     <th></th>
     <th></th>
   </tr>
@@ -44,7 +38,7 @@
     <td><%= review.other %></td>
     <td><%= review.rating %></td>
     <td><%= review.author %></td>
-    <td><%= review.venue_id %></td>
+    <td><%= review.date %></td>
     <td><%= link_to 'Edit', edit_venue_review_path(@venue,review) %></td>
     <td><%= link_to 'Destroy', venue_review_path(@venue,review), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -53,4 +47,5 @@
 
 <br />
 
-<%= link_to 'New Review', new_venue_review_path(@venue) %>
+<%= link_to 'New Review', new_venue_review_path(@venue) %> |
+<%= link_to 'Back', venues_path %>
