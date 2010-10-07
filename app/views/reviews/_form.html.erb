@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :review %><br />
+    <%= f.label :review, 'Omdöme' %><br />
     <%= f.text_field :review %>
   </div>
   <div class="field">
-    <%= f.label :other %><br />
+    <%= f.label :other, 'Övrigt' %><br />
     <%= f.text_field :other %>
   </div>
   <div class="field">
-    <%= f.label :rating %><br />
+    <%= f.label :rating, 'Betyg (1-5)' %><br />
     <%= f.text_field :rating %>
   </div>
   <div class="field">
-    <%= f.label :author %><br />
+    <%= f.label :author, 'Rapporterad av' %><br />
     <%= f.text_field :author %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label :date, 'Testades den' %><br />
     <%= f.text_field :date %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Spara' %>
   </div>
 <% end %>

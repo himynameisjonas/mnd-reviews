@@ -7,7 +7,7 @@
 </p>
 
 <p>
-  <b>Typ:</b>
+  <b>Typ av mat:</b>
   <%= @venue.type_of_food %>
 </p>
 
@@ -17,7 +17,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_venue_path(@venue) %>
+<%= link_to 'Redigera', edit_venue_path(@venue) %>
 
 <h2>Recensioner</h2>
 
@@ -39,13 +39,13 @@
     <td><%= review.rating %></td>
     <td><%= review.author %></td>
     <td><%= review.date %></td>
-    <td><%= link_to 'Edit', edit_venue_review_path(@venue,review) %></td>
-    <td><%= link_to 'Destroy', venue_review_path(@venue,review), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Redigera', edit_venue_review_path(@venue,review) %></td>
+    <td><%= link_to 'Radera', venue_review_path(@venue,review), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Review', new_venue_review_path(@venue) %> |
-<%= link_to 'Back', venues_path %>
+<%= link_to 'Ny recension', new_venue_review_path(@venue) %> |
+<%= link_to 'Tillbaka', venues_path %>

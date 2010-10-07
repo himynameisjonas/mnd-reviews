@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, 'Namn' %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :adress %><br />
+    <%= f.label :adress, 'Adress' %><br />
     <%= f.text_field :adress %>
   </div>
   <div class="field">
-    <%= f.label :type_of_food %><br />
+    <%= f.label :type_of_food, 'Typ av mat' %><br />
     <%= f.text_field :type_of_food %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label :price, 'Prisklass' %><br />
     <%= f.text_field :price %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Spara'%>
   </div>
 <% end %>
