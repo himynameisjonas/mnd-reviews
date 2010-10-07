@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @venue.name %>
+</p>
+
+<p>
+  <b>Adress:</b>
+  <%= @venue.adress %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @venue.type %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @venue.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_venue_path(@venue) %> |
+<%= link_to 'Back', venues_path %>
