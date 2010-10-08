@@ -51,10 +51,14 @@ function initialize_index_map() {
     
     $("td.address").each(function(index){
         var url = $(this).siblings(".url").find("a").attr("href")
-        geocoder.geocode( { 'address': $(this).text()+", stockholm"}, function(results, status) {
+        var adress = $(this).text()+", stockholm"
+        var name = $(this).siblings(".url").find("a").text()
+        
+        geocoder.geocode( { 'address': adress}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 var marker = new google.maps.Marker({
                     map: map,
+                    title: name,
                     icon: 'http://google-maps-icons.googlecode.com/files/restaurant.png',
                     position: results[0].geometry.location
                 });
