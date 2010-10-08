@@ -16,6 +16,11 @@
   <%= @venue.price %>
 </p>
 
+<%- if @venue.foursquare_id.present? -%>
+    <p>
+        <iframe src="http://foursquare.com/button.html?vid=<%= @venue.foursquare_id %>&color=light" allowtransparency="true" frameborder="0" scrolling="no" style="width:165px; height:25px;"></iframe>
+    </p>
+<%- end -%>
 
 <%= link_to 'Redigera', edit_venue_path(@venue) %>
 

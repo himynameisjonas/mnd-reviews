@@ -4,8 +4,11 @@ body, p, ol, ul, td {
   font-family: "helvetica neue", helvetica, arial, sans-serif;
   font-size:   13px;
   line-height: 18px;
-  margin:0;
-  background: #DDD;
+}
+
+body {
+    margin: 50px 0;
+    background: #DDD;
 }
 
 td,th {
@@ -42,12 +45,16 @@ header, footer {
   color: #BFBFBF;
   height: 50px;
   font-weight: lighter;
+  width: 100%;
+  position: fixed;
 }
 
 footer {
-  position: absolute;
   bottom: 0;
-  width: 100%;
+}
+
+header {
+    top: 0;
 }
 
 section#content {
