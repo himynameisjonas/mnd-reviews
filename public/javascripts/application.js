@@ -7,6 +7,7 @@ function initialize_show_map(adress) {
         zoom: 15,
         center: latlng,
         mapTypeControl: false,
+        scrollwheel: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"),
@@ -39,6 +40,7 @@ function initialize_index_map() {
         zoom: 14,
         center: latlng,
         mapTypeControl: false,
+        scrollwheel: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById("index_map_canvas"),
