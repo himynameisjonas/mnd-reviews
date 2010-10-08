@@ -18,7 +18,7 @@
     <td class="nowrap"><%= venue.adress %></td>
     <td><%= venue.type_of_food %></td>
     <td><%= venue.price %></td>
-    <td><%= venue.average_rating %></td>
+    <td><%= number_with_precision(venue.average_rating, :precision => 1 ) %></td>
     <td><%= venue.total_ratings %></td>
     <td class="nowrap"><%= link_to 'Visa recensioner', venue %></td>
     <td><%= link_to 'Redigera', edit_venue_path(venue) %></td>
