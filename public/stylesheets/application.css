@@ -55,6 +55,7 @@ header, footer {
   font-weight: lighter;
   width: 100%;
   position: fixed;
+  z-index: 99;
 }
 
 footer {
