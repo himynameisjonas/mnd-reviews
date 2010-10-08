@@ -41,7 +41,7 @@ function initialize_index_map() {
         mapTypeControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    var map = new google.maps.Map(document.getElementById("map_canvas"),
+    var map = new google.maps.Map(document.getElementById("index_map_canvas"),
     myOptions);
     var marker = new google.maps.Marker({
         map: map,

@@ -37,6 +37,10 @@ table, tr, form {
 table {
     clear: both;
 }
+#index_table {
+    width: 100%;
+}
+
 tr:hover td{
     background: #CECECE;
 }
@@ -104,7 +108,12 @@ footer div {
     margin-bottom: 20px;
     clear: both;
 }
-
+#index_map_canvas{
+    height: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+    clear: both;
+}
 #notice {
   clear: both;
   color: red;
