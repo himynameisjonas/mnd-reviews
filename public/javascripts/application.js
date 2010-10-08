@@ -17,8 +17,14 @@ function initialize_map(adress) {
 
             map.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
-                map: map, 
+                map: map,
+                icon: 'http://google-maps-icons.googlecode.com/files/restaurant.png',
                 position: results[0].geometry.location
+            });
+            var marker = new google.maps.Marker({
+                map: map,
+                icon: 'http://www.mynewsdesk.com/favicon.png',
+                position: latlng
             });
         } else {
             alert("Adress felaktig, vänligen redigera" + status);
