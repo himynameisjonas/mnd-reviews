@@ -24,7 +24,6 @@ pre {
 }
 
 a { color: #000; }
-a:visited { color: #000; }
 a:hover { color: #fff; background-color:#000; }
 
 div.field, div.actions {
@@ -34,6 +33,9 @@ div.field, div.actions {
 table, tr, form {
   background: #EAEAEA;
   border-spacing: 0;
+}
+table {
+    clear: both;
 }
 tr:hover td{
     background: #CECECE;
@@ -68,14 +70,38 @@ section#content {
   padding: 20px;
 }
 
+#content h1 {
+    float: left;
+}
+
+#adress p {
+    margin: 0;
+}
+
+#foursquare {
+    margin: 15px 0 0 20px;
+}
+
 header h1, footer div {
   margin: 0;
   padding: 13px 20px;
   font-size: 20px;
   font-weight: inherit;
 }
+
+h1 a {
+    color: #BFBFBF;
+    text-decoration: none;
+}
+
 footer div {
   font-size: inherit;
+}
+#map_canvas {
+    height: 300px;
+    width: 600px;
+    margin-bottom: 20px;
+    clear: both;
 }
 
 #notice {
