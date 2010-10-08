@@ -105,7 +105,8 @@ footer div {
 }
 
 #notice {
-  color: green;
+  clear: both;
+  color: red;
 }
 
 .field_with_errors {
