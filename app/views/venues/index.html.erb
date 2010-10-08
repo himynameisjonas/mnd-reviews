@@ -1,5 +1,16 @@
-<h1>Lunchställen</h1>
+<% content_for :header do -%>
+    <script type="text/javascript"
+        src="http://maps.google.com/maps/api/js?sensor=false">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            initialize_index_map();
+        });
+    </script>
+<% end -%>
 
+<h1>Lunchställen</h1>
+<div id="map_canvas"></div>
 <table>
   <tr>
     <th>Namn</th>
@@ -14,8 +25,8 @@
 
 <% @venues.each do |venue| %>
   <tr>
-    <td class="nowrap"><%= link_to venue.name, venue %></td>
-    <td class="nowrap"><%= venue.adress %></td>
+    <td class="nowrap url"><%= link_to venue.name, venue_url(venue) %></td>
+    <td class="nowrap address"><%= venue.adress %></td>
     <td><%= venue.type_of_food %></td>
     <td><%= venue.price %></td>
     <td><%= number_with_precision(venue.average_rating, :precision => 1 ) %></td>
