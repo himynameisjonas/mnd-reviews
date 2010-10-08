@@ -29,8 +29,12 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 
-table, tr, td, form {
+table, tr, form {
   background: #EAEAEA;
+  border-spacing: 0;
+}
+tr:hover td{
+    background: #DADADA;
 }
 form {
   padding: 10px;
