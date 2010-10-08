@@ -6,6 +6,7 @@
     <th>Adress</th>
     <th>Typ av mat</th>
     <th>Prisklass</th>
+    <th>Genomsnittbetyg (1-5)</th>
     <th></th>
     <th></th>
   </tr>
@@ -16,6 +17,7 @@
     <td><%= venue.adress %></td>
     <td><%= venue.type_of_food %></td>
     <td><%= venue.price %></td>
+    <td><%= venue.average_rating %></td>
     <td><%= link_to 'Visa recensioner', venue %></td>
     <td><%= link_to 'Redigera', edit_venue_path(venue) %></td>
   </tr>
