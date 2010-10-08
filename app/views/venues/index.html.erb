@@ -7,6 +7,7 @@
     <th>Typ av mat</th>
     <th>Prisklass</th>
     <th>Genomsnittligt betyg (1-5)</th>
+    <th>Antal recensioner</th>
     <th></th>
     <th></th>
   </tr>
@@ -18,6 +19,7 @@
     <td><%= venue.type_of_food %></td>
     <td><%= venue.price %></td>
     <td><%= venue.average_rating %></td>
+    <td><%= venue.total_ratings %></td>
     <td class="nowrap"><%= link_to 'Visa recensioner', venue %></td>
     <td><%= link_to 'Redigera', edit_venue_path(venue) %></td>
   </tr>

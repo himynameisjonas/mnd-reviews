@@ -4,4 +4,8 @@ class Venue < ActiveRecord::Base
   def average_rating
     self.reviews.average('rating')
   end
+  
+  def total_ratings
+    self.reviews.count
+  end
 end
