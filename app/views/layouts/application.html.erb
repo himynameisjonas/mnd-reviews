@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyNewsdesk lunchrecensioner</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  <%= yield(:header) %>
+</head>
+<body>
+<header>
+  <h1><%= link_to "MyNewsdesk lunchrecensioner", root_path %></h1>
+</header>
+<section id="content">
+<%= yield %>
+</section>
+<footer>
+  <div>Trevlig lunch!</div>
+</footer>
+</body>
+</html>

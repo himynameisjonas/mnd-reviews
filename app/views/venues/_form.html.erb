@@ -1,0 +1,37 @@
+<%= form_for(@venue) do |f| %>
+  <% if @venue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
+
+      <ul>
+      <% @venue.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, 'Namn' %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :adress, 'Gatuadress' %><br />
+    <%= f.text_field :adress %>
+  </div>
+  <div class="field">
+    <%= f.label :type_of_food, 'Typ av mat' %><br />
+    <%= f.text_field :type_of_food %>
+  </div>
+  <div class="field">
+    <%= f.label :price, 'Prisklass' %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :foursquare_id, 'foursquare id' %><br />
+    <%= f.text_field :foursquare_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Spara'%>
+  </div>
+<% end %>

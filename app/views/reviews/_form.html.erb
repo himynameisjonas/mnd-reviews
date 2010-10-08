@@ -1,0 +1,37 @@
+<%= form_for([@venue,@review]) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :review, 'Omdöme' %><br />
+    <%= f.text_field :review %>
+  </div>
+  <div class="field">
+    <%= f.label :other, 'Övrigt' %><br />
+    <%= f.text_field :other %>
+  </div>
+  <div class="field">
+    <%= f.label :rating, 'Betyg (1-5)' %><br />
+    <%= f.text_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :author, 'Rapporterad av' %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :date, 'Testades den' %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Spara' %>
+  </div>
+<% end %>
