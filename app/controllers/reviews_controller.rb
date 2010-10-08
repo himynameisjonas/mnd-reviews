@@ -59,11 +59,12 @@ class ReviewsController < ApplicationController
   # PUT /reviews/1
   # PUT /reviews/1.xml
   def update
+    @venue = Venue.find(params[:venue_id])
     @review = Review.find(params[:id])
 
     respond_to do |format|
       if @review.update_attributes(params[:review])
-        format.html { redirect_to(@review, :notice => 'Review was successfully updated.') }
+        format.html { redirect_to(@venue, :notice => 'Review was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
