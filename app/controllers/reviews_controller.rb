@@ -47,7 +47,7 @@ class ReviewsController < ApplicationController
     
     respond_to do |format|
       if @review.save
-        format.html { redirect_to(@venue, :notice => 'Review was successfully created.') }
+        format.html { redirect_to(@venue, :notice => 'Recension sparad') }
         format.xml  { render :xml => @venue, :status => :created, :location => @venue }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.update_attributes(params[:review])
-        format.html { redirect_to(@venue, :notice => 'Review was successfully updated.') }
+        format.html { redirect_to(@venue, :notice => 'Ändringarna av recensionen är sparade') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

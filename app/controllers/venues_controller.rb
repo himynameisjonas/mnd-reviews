@@ -45,7 +45,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       if @venue.save
-        format.html { redirect_to(@venue, :notice => 'Venue was successfully created.') }
+        format.html { redirect_to(@venue, :notice => 'Sparade det nya stället') }
         format.xml  { render :xml => @venue, :status => :created, :location => @venue }
       else
         format.html { render :action => "new" }
@@ -61,7 +61,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       if @venue.update_attributes(params[:venue])
-        format.html { redirect_to(@venue, :notice => 'Venue was successfully updated.') }
+        format.html { redirect_to(@venue, :notice => 'Ändringar uppdaterade') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
