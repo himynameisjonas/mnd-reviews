@@ -33,7 +33,6 @@ GEM
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    exceptional (2.0.26)
     i18n (0.4.1)
     jquery-rails (0.2.1)
       rails (~> 3.0.0)
@@ -72,7 +71,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  exceptional
   jquery-rails
   rails (= 3.0.0)
   sqlite3-ruby
