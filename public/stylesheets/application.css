@@ -15,6 +15,10 @@ td,th {
   padding: 5px 15px;
 }
 
+th {
+  text-align: left;
+}
+
 .nowrap { white-space: nowrap;}
 
 pre {
