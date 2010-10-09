@@ -217,3 +217,7 @@ div.ui-datepicker {
   height: 100%;
   line-height: 2em;
 }
+
+td.ui-datepicker-current-day {
+  background: #444;
+}
