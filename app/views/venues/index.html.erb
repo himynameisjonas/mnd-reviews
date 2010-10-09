@@ -18,6 +18,7 @@
       <th>Adress</th>
       <th>Typ av mat</th>
       <th>Prisklass</th>
+      <th>Senast recenserad</th>
       <th>Snittbetyg</th>
       <th></th>
       <th></th>
@@ -30,6 +31,7 @@
         <td class="nowrap address"><%= venue.adress %></td>
         <td><%= venue.type_of_food %></td>
         <td><%= venue.price %></td>
+        <td><%= venue.latest_review.date %></td>
         <td><%= number_with_precision(venue.average_rating, :precision => 1 ) %></td>
         <td class="nowrap"><%= link_to "#{pluralize(venue.total_ratings, "recension", "recensioner")}", venue, :class => "button" %></td>
         <td><%= link_to 'Redigera', edit_venue_path(venue), :class => "button" %></td>
