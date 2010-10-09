@@ -29,7 +29,7 @@
       <b>Prisklass:</b>
       <%= @venue.price %>
     </p>
-    <%= link_to 'Redigera information', edit_venue_path(@venue) %>
+    <%= link_to 'Redigera information', edit_venue_path(@venue), :class => "button inline" %>
 </div>
 
 
@@ -39,9 +39,9 @@
   <tr>
     <th>Omdöme</th>
     <th>Övrigt</th>
-    <th>Betyg (1-5)</th>
+    <th>Betyg</th>
     <th>Rapporterad av</th>
-    <th>Testad den</th>
+    <th>Testad</th>
     <th></th>
     <th></th>
   </tr>
@@ -52,14 +52,14 @@
     <td><%= review.other %></td>
     <td><%= review.rating %></td>
     <td><%= review.author %></td>
-    <td><%= review.date %></td>
-    <td><%= link_to 'Redigera', edit_venue_review_path(@venue,review) %></td>
-    <td><%= link_to 'Radera', venue_review_path(@venue,review), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="nowrap"><%= review.date %></td>
+    <td><%= link_to 'Redigera', edit_venue_review_path(@venue,review), :class => "button" %></td>
+    <td><%= link_to 'Radera', venue_review_path(@venue,review), :class => "button", :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Ny recension', new_venue_review_path(@venue) %> |
-<%= link_to 'Tillbaka', venues_path %>
+<%= link_to 'Ny recension', new_venue_review_path(@venue), :class => "button inline" %>
+<%= link_to 'Tillbaka', venues_path, :class => "button inline" %>

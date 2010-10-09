@@ -29,7 +29,26 @@ pre {
 
 a { color: #000; }
 a:hover { color: #fff; background-color:#000; }
-
+a.button {
+  padding: 5px 8px;
+  margin: 1px;
+  display: block;
+  background: #242424;
+  color: #EAEAEA;
+  font-size: 11px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+a.button:hover {
+  background: #444;
+}
+a.inline {
+  display: inline-block;
+}
 div.field, div.actions {
   margin-bottom: 10px;
 }
