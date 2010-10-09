@@ -70,5 +70,4 @@ function initialize_index_map() {
             }
         });        
     });
-
 }

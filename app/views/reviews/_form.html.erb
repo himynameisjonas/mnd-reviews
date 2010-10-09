@@ -1,3 +1,12 @@
+<% content_for :header do -%>
+  <%= javascript_include_tag "jquery-ui-1.8.5.custom.min" %>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+       $("input.date").datepicker( {dateFormat: 'yy-mm-dd', firstDay: 1 });
+    })
+  </script>
+<% end -%>
 <%= form_for([@venue,@review]) do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
@@ -29,7 +38,7 @@
   </div>
   <div class="field">
     <%= f.label :date, 'Testades den' %><br />
-    <%= f.text_field :date %>
+    <%= f.text_field :date, :class => "date" %>
   </div>
   <div class="actions">
     <%= f.submit 'Spara' %>
