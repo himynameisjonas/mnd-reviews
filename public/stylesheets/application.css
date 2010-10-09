@@ -64,6 +64,19 @@ table {
     width: 100%;
 }
 
+#index_table th {
+  cursor: pointer;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+
+th.headerSortDown {
+  background: url("/images/tablesorter/desc.gif");
+}
+th.headerSortUp {
+  background: url("/images/tablesorter/asc.gif");
+}
+
 tr:hover td{
     background: #CECECE;
 }
