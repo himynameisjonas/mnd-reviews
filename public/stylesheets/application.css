@@ -87,7 +87,7 @@ form {
   margin-bottom: 10px;
 }
 
-header, footer {
+header {
   display: block;
   background: #242424;
   color: #BFBFBF;
@@ -96,10 +96,6 @@ header, footer {
   width: 100%;
   position: fixed;
   z-index: 99;
-}
-
-footer {
-  bottom: 0;
 }
 
 header {
@@ -123,7 +119,7 @@ section#content {
     margin: 15px 0 0 20px;
 }
 
-header h1, footer div {
+header h1{
   margin: 0;
   padding: 13px 20px;
   font-size: 20px;
@@ -135,9 +131,6 @@ h1 a {
     text-decoration: none;
 }
 
-footer div {
-  font-size: inherit;
-}
 #map_canvas {
     height: 300px;
     width: 600px;
