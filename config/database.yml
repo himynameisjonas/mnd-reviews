@@ -7,7 +7,7 @@
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
   adapter: sqlite3
-  database: db/development_<%= git_branch ? "_#{git_branch}" : '' %>.sqlite3
+  database: db/development<%= git_branch ? "_#{git_branch}" : '' %>.sqlite3
   #database: db/development_master.sqlite3
   pool: 5
   timeout: 5000
