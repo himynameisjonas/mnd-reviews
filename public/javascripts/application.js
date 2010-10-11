@@ -36,7 +36,6 @@ function initialize_show_map(adress) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     distance = response.routes[0].legs[0].distance.text;
                     duration = response.routes[0].legs[0].duration.text;
-                    console.log(distance, duration)
                     $("#adress p").last().after($('<p>', { 
                     html: "<strong>Avstånd:</strong> "+distance + " (" + duration +")"
                     }))
