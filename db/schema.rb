@@ -10,27 +10,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101007212715) do
+ActiveRecord::Schema.define(:version => 20101011113528) do
 
-  create_table "reviews", :force => true do |t|
-    t.string   "review"
-    t.string   "other"
-    t.integer  "rating"
-    t.string   "author"
-    t.integer  "venue_id"
+  create_table "authorizations", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "date"
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.string    "review"
+    t.string    "other"
+    t.integer   "rating"
+    t.string    "author"
+    t.integer   "venue_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.date      "date"
+    t.integer   "user_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "venues", :force => true do |t|
-    t.string   "name"
-    t.string   "adress"
-    t.string   "type_of_food"
-    t.string   "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "foursquare_id"
+    t.string    "name"
+    t.string    "adress"
+    t.string    "type_of_food"
+    t.string    "price"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "foursquare_id"
   end
 
 end

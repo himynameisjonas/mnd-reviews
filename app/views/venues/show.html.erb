@@ -8,7 +8,7 @@
         });
     </script>
 <% end -%>
-<%= "<p id='notice'>#{notice}</p>".html_safe if notice.present? %>
+
 <h1><%= @venue.name %></h1>
 <%- if @venue.foursquare_id.present? -%>
     <iframe id="foursquare" src="http://foursquare.com/button.html?vid=<%= @venue.foursquare_id %>&color=light" allowtransparency="true" frameborder="0" scrolling="no" style="width:165px; height:25px;"></iframe>

@@ -10,9 +10,11 @@
 </head>
 <body>
 <header>
-  <h1><%= link_to "MyNewsdesk lunchrecensioner", root_path %></h1>
+  <h1><%= link_to "MyNewsdesk lunchrecensioner", root_path %> | <%= current_user.nil? ? link_to("Logga in med Twitter", "/auth/twitter") : "Inloggad som #{current_user.name} | #{link_to("Logga ut",logout_path)}".html_safe %></h1>
+  
 </header>
 <section id="content">
+<%= "<p id='notice'>#{notice}</p>".html_safe if notice.present? %>
 <%= yield %>
 </section>
 <!-- Piwik -->
