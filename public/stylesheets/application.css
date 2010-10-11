@@ -214,3 +214,30 @@ div.ui-datepicker {
 td.ui-datepicker-current-day {
   background: #444;
 }
+
+
+@media only screen and (max-width: 767px) {
+
+  body {
+    width: 100%;
+  }
+  
+  .mobilehide {
+    display:none!important;
+  }
+  section#content {
+    padding: 10px;
+  }
+  
+  table {
+    margin-left: -20px;
+    max-width: 767px;
+  }
+  
+  .nowrap { white-space: normal;}
+
+  #map_canvas, #index_map_canvas {
+    height: 200px;
+    width: 100%;
+  }
+}

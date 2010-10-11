@@ -15,26 +15,26 @@
   <thead>
     <tr>
       <th>Namn</th>
-      <th>Adress</th>
+      <th class="mobilehide">Adress</th>
       <th>Typ av mat</th>
-      <th>Prisklass</th>
-      <th>Senast recenserad</th>
+      <th class="mobilehide">Prisklass</th>
+      <th class="mobilehide">Senast recenserad</th>
       <th>Snittbetyg</th>
-      <th></th>
-      <th></th>
+      <th class="mobilehide"></th>
+      <th class="mobilehide"></th>
     </tr>
   </thead>
   <tbody>
     <% @venues.each do |venue| %>
       <tr>
         <td class="nowrap url"><%= link_to venue.name, venue_url(venue) %></td>
-        <td class="nowrap address"><%= venue.adress %></td>
+        <td class="mobilehide nowrap address"><%= venue.adress %></td>
         <td><%= venue.type_of_food %></td>
-        <td><%= venue.price %></td>
-        <td><%= venue.latest_review.date %></td>
+        <td class="mobilehide"><%= venue.price %></td>
+        <td class="mobilehide"><%= venue.latest_review.date %></td>
         <td><%= number_with_precision(venue.average_rating, :precision => 1 ) %></td>
-        <td class="nowrap"><%= link_to "#{pluralize(venue.total_ratings, "recension", "recensioner")}", venue, :class => "button" %></td>
-        <td><%= link_to 'Redigera', edit_venue_path(venue), :class => "button" %></td>
+        <td class="mobilehide nowrap"><%= link_to "#{pluralize(venue.total_ratings, "recension", "recensioner")}", venue, :class => "button" %></td>
+        <td class="mobilehide"><%= link_to 'Redigera', edit_venue_path(venue), :class => "button" %></td>
       </tr>
     <% end %>
   </tbody>
