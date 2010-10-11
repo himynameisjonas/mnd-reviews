@@ -1,5 +1,6 @@
 class Review < ActiveRecord::Base
   belongs_to :venue
+  belongs_to :user
   
   validates :review, :presence => true
   validates :author, :presence => true

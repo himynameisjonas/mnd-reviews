@@ -31,4 +31,4 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 
 gem "jquery-rails"
-gem "jquery-rails"
+gem 'omniauth'
