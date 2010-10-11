@@ -7,8 +7,8 @@ body, p, ol, ul, td {
 }
 
 body {
-    margin: 50px 0;
-    background: #DDD;
+  margin: 50px 0;
+  background: #DDD;
 }
 
 td,th {
@@ -58,10 +58,10 @@ table, tr, form {
   border-spacing: 0;
 }
 table {
-    clear: both;
+  clear: both;
 }
 #index_table {
-    width: 100%;
+  width: 100%;
 }
 
 #index_table th {
@@ -78,7 +78,7 @@ th.headerSortUp {
 }
 
 tr:hover td{
-    background: #CECECE;
+  background: #CECECE;
 }
 form {
   padding: 10px;
@@ -99,7 +99,7 @@ header {
 }
 
 header {
-    top: 0;
+  top: 0;
 }
 
 section#content {
@@ -108,15 +108,15 @@ section#content {
 }
 
 #content h1 {
-    float: left;
+  float: left;
 }
 
 #adress p {
-    margin: 0;
+  margin: 0;
 }
 
 #foursquare {
-    margin: 15px 0 0 20px;
+  margin: 15px 0 0 20px;
 }
 
 header h1{
@@ -127,21 +127,21 @@ header h1{
 }
 
 h1 a {
-    color: #BFBFBF;
-    text-decoration: none;
+  color: #BFBFBF;
+  text-decoration: none;
 }
 
 #map_canvas {
-    height: 300px;
-    width: 600px;
-    margin-bottom: 20px;
-    clear: both;
+  height: 300px;
+  width: 600px;
+  margin-bottom: 20px;
+  clear: both;
 }
 #index_map_canvas{
-    height: 400px;
-    width: 100%;
-    margin-bottom: 20px;
-    clear: both;
+  height: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+  clear: both;
 }
 #notice {
   clear: both;
