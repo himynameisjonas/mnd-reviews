@@ -29,6 +29,7 @@ pre {
 
 a { color: #000; }
 a:hover { color: #fff; background-color:#000; }
+
 a.button {
   padding: 5px 8px;
   margin: 1px;
@@ -43,12 +44,19 @@ a.button {
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
+
 a.button:hover {
   background: #444;
 }
+
 a.inline {
   display: inline-block;
 }
+
+#adress .button {
+  margin-top: 10px;
+}
+
 div.field, div.actions {
   margin-bottom: 10px;
 }

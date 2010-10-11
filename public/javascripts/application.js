@@ -12,10 +12,10 @@ function initialize_show_map(adress) {
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"),
     myOptions);
+    var directionsService = new google.maps.DirectionsService();
     var address = adress+", stockholm"
     geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-
             map.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
                 map: map,
@@ -27,12 +27,28 @@ function initialize_show_map(adress) {
                 icon: 'http://www.mynewsdesk.com/favicon.png',
                 position: latlng
             });
+            var request = {
+            origin: latlng,
+            destination: results[0].geometry.location,
+            travelMode: google.maps.DirectionsTravelMode.WALKING
+            }
+            directionsService.route(request, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    distance = response.routes[0].legs[0].distance.text;
+                    duration = response.routes[0].legs[0].duration.text;
+                    console.log(distance, duration)
+                    $("#adress p").last().after($('<p>', { 
+                    html: "<strong>Avstånd:</strong> "+distance + " (" + duration +")"
+                    }))
+                } else {
+                  console.log(status)
+                }
+            });
         } else {
             alert("Adress felaktig, vänligen redigera" + status);
         }
     });
 }
-
 function initialize_index_map() {
     var geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(59.3140065, 18.0568956);
