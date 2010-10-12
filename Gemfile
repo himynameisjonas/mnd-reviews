@@ -31,5 +31,5 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 
 gem "jquery-rails"
-gem 'omniauth', :git => "http://github.com/intridea/omniauth.git"
+gem 'omniauth', '>=0.1.3'
 gem 'memcached-northscale'

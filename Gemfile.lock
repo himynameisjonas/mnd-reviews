@@ -1,36 +1,3 @@
-GIT
-  remote: http://github.com/intridea/omniauth.git
-  revision: 0eafa3d2291f24ad86df8c8c0264f3c43b1eaf52
-  specs:
-    oa-basic (0.1.3)
-      multi_json (~> 0.0.2)
-      nokogiri (~> 1.4.2)
-      oa-core (= 0.1.3)
-      rest-client (~> 1.6.0)
-    oa-core (0.1.3)
-      rack (~> 1.1)
-    oa-enterprise (0.1.3)
-      net-ldap (~> 0.1.1)
-      nokogiri (~> 1.4.2)
-      oa-core (= 0.1.3)
-      rubyntlm (~> 0.1.1)
-    oa-oauth (0.1.3)
-      multi_json (~> 0.0.2)
-      nokogiri (~> 1.4.2)
-      oa-core (= 0.1.3)
-      oauth (~> 0.4.0)
-      oauth2 (~> 0.0.10)
-    oa-openid (0.1.3)
-      oa-core (= 0.1.3)
-      rack-openid (~> 1.1.1)
-      ruby-openid-apps-discovery
-    omniauth (0.1.3)
-      oa-basic (= 0.1.3)
-      oa-core (= 0.1.3)
-      oa-enterprise (= 0.1.3)
-      oa-oauth (= 0.1.3)
-      oa-openid (= 0.1.3)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -82,10 +49,38 @@ GEM
     multi_json (0.0.4)
     net-ldap (0.1.1)
     nokogiri (1.4.3.1)
+    oa-basic (0.1.3)
+      multi_json (~> 0.0.2)
+      nokogiri (~> 1.4.2)
+      oa-core (= 0.1.3)
+      rest-client (~> 1.6.0)
+    oa-core (0.1.3)
+      rack (~> 1.1)
+    oa-enterprise (0.1.3)
+      net-ldap (~> 0.1.1)
+      nokogiri (~> 1.4.2)
+      oa-core (= 0.1.3)
+      rubyntlm (~> 0.1.1)
+    oa-oauth (0.1.3)
+      multi_json (~> 0.0.2)
+      nokogiri (~> 1.4.2)
+      oa-core (= 0.1.3)
+      oauth (~> 0.4.0)
+      oauth2 (~> 0.0.10)
+    oa-openid (0.1.3)
+      oa-core (= 0.1.3)
+      rack-openid (~> 1.1.1)
+      ruby-openid-apps-discovery
     oauth (0.4.3)
     oauth2 (0.0.13)
       faraday (~> 0.4.1)
       multi_json (>= 0.0.4)
+    omniauth (0.1.3)
+      oa-basic (= 0.1.3)
+      oa-core (= 0.1.3)
+      oa-enterprise (= 0.1.3)
+      oa-oauth (= 0.1.3)
+      oa-openid (= 0.1.3)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -127,6 +122,6 @@ PLATFORMS
 DEPENDENCIES
   jquery-rails
   memcached-northscale
-  omniauth!
+  omniauth (>= 0.1.3)
   rails (= 3.0.0)
   sqlite3-ruby
