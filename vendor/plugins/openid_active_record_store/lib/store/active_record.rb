@@ -18,7 +18,7 @@ module OpenID
         oa.target = targetize(server_url)
         oa.handle = association.handle
         oa.secret = association.secret
-        oa.issued_at = association.issued_at
+        oa.issued_at = association.issued
         oa.lifetime = association.lifetime
         oa.assoc_type = association.assoc_type
         oa.save
