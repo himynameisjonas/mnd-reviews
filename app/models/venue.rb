@@ -9,6 +9,14 @@ class Venue < ActiveRecord::Base
     self.reviews.average('rating')
   end
   
+  def max_rating
+    self.reviews.maximum('rating')
+  end
+  
+  def summary_review
+    self.reviews.last.review
+  end
+  
   def total_ratings
     self.reviews.count
   end

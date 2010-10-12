@@ -9,29 +9,40 @@
     </script>
 <% end -%>
 <%= "<p id='notice'>#{notice}</p>".html_safe if notice.present? %>
-<h1><%= @venue.name %></h1>
-<%- if @venue.foursquare_id.present? -%>
-    <iframe id="foursquare" src="http://foursquare.com/button.html?vid=<%= @venue.foursquare_id %>&color=light" allowtransparency="true" frameborder="0" scrolling="no" style="width:165px; height:25px;"></iframe>
-<%- end -%>
-<div id="map_canvas"></div>
-<div id="adress">
-    <p>
-      <b>Gatuadress:</b>
-      <%= @venue.adress %>
-    </p>
-
-    <p>
-      <b>Typ av mat:</b>
-      <%= @venue.type_of_food %>
-    </p>
-
-    <p>
-      <b>Prisklass:</b>
-      <%= @venue.price %>
-    </p>
-    <%= link_to 'Redigera information', edit_venue_path(@venue), :class => "button inline mobilehide" %>
+<div class="hreview-aggregate">
+	<h1 class="item"><span class="fn"><%= @venue.name %></span></h1>
+	<%- if @venue.foursquare_id.present? -%>
+		<iframe id="foursquare" src="http://foursquare.com/button.html?vid=<%= @venue.foursquare_id %>&color=light" allowtransparency="true" frameborder="0" scrolling="no" style="width:165px; height:25px;"></iframe>
+	<%- end -%>
+	<div id="map_canvas"></div>
+	<div id="adress">
+		<p>
+			<strong>Gatuadress:</strong>
+			<%= @venue.adress %>
+		</p>
+		<p>
+			<strong>Typ av mat:</strong>
+			<%= @venue.type_of_food %>
+		</p>
+		<p>
+			<strong>Prisklass:</strong>
+			<%= @venue.price %>
+		</p>
+		<p>
+		<div class="rating">
+			<strong>Betyg</strong>
+			<span class="average"><%= number_with_precision(@venue.average_rating, :precision => 1 ) %></span> bästa betyget <span class="best"><%=@venue.max_rating%></span>
+		</div>
+		<p>
+			av <span class="votes"><%=@venue.total_ratings%></span> recensioner. Av <span class="count"><%=@venue.total_ratings%></span> användare.
+		</p>
+		<strong>Senaste recensionen</strong>
+		<p class="summary">
+			<%=@venue.summary_review%>
+		</p>
+		<%= link_to 'Redigera information', edit_venue_path(@venue), :class => "button inline mobilehide" %>
+	</div>
 </div>
-
 
 <h2>Recensioner</h2>
 

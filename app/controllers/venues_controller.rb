@@ -15,6 +15,7 @@ class VenuesController < ApplicationController
   def show
     @venue = Venue.find(params[:id])
     @reviews = @venue.reviews
+    @page_title = @venue.name
 
     respond_to do |format|
       format.html # show.html.erb
