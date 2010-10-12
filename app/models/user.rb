@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :authorizations
   
   def self.create_from_hash!(hash)
-    create(:name => hash['user_info']['name'])
+    name = hash['user_info']['name'] || hash['user_info']['email']
+    create(:name => name)
   end
 end

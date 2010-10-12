@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-  <h1><%= link_to "MyNewsdesk lunchrecensioner", root_path %> | <%= current_user.nil? ? link_to("Logga in med Twitter", "/auth/twitter") : "Inloggad som #{current_user.name} | #{link_to("Logga ut",logout_path)}".html_safe %></h1>
+  <h1><%= link_to "MyNewsdesk lunchrecensioner", root_path %> | <%= !signed_in? ? link_to("Logga in med Twitter", "/auth/twitter") << " | "<< link_to("Logga in med MyNewsdesk", "/auth/google_apps"): "Inloggad som #{current_user.name} | #{link_to("Logga ut",logout_path)}".html_safe %></h1>
   
 </header>
 <section id="content">
