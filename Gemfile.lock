@@ -44,6 +44,7 @@ GEM
       activesupport (>= 2.3.6)
       mime-types
       treetop (>= 1.4.5)
+    memcache (1.2.13)
     mime-types (1.16)
     multi_json (0.0.4)
     net-ldap (0.1.1)
@@ -120,6 +121,7 @@ PLATFORMS
 
 DEPENDENCIES
   jquery-rails
+  memcache
   omniauth
   rails (= 3.0.0)
   sqlite3-ruby
