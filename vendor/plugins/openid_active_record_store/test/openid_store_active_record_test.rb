@@ -41,10 +41,10 @@ class OpenidStoreActiveRecordTest < ActiveSupport::TestCase
     OpenID::CryptUtil.random_string(n, @@allowed_handle)
   end
 
-  def _gen_assoc(issued, lifetime=600)
+  def _gen_assoc(issued_at, lifetime=600)
     secret = _gen_secret(20)
     handle = _gen_handle(128)
-    OpenID::Association.new(handle, secret, Time.now + issued, lifetime,
+    OpenID::Association.new(handle, secret, Time.now + issued_at, lifetime,
                             'HMAC-SHA1')
   end
 
@@ -67,7 +67,7 @@ class OpenidStoreActiveRecordTest < ActiveSupport::TestCase
 
   def test_store
     server_url = "http://www.myopenid.com/openid"
-    assoc = _gen_assoc(issued=0)
+    assoc = _gen_assoc(issued_at=0)
 
     # Make sure that a missing association returns no result
     _check_retrieve(server_url)
@@ -99,7 +99,7 @@ class OpenidStoreActiveRecordTest < ActiveSupport::TestCase
     @store.store_association(server_url, assoc)
 
     # More recent and expires after assoc
-    assoc2 = _gen_assoc(issued=1)
+    assoc2 = _gen_assoc(issued_at=1)
     @store.store_association(server_url, assoc2)
 
     # After storing an association with a different handle, but the
@@ -116,7 +116,7 @@ class OpenidStoreActiveRecordTest < ActiveSupport::TestCase
     # More recent, and expires earlier than assoc2 or assoc. Make sure
     # that we're picking the one with the latest issued date and not
     # taking into account the expiration.
-    assoc3 = _gen_assoc(issued=2, lifetime=100)
+    assoc3 = _gen_assoc(issued_at=2, lifetime=100)
     @store.store_association(server_url, assoc3)
 
     _check_retrieve(server_url, nil, assoc3)

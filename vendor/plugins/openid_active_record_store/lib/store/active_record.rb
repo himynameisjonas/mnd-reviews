@@ -18,7 +18,7 @@ module OpenID
         oa.target = targetize(server_url)
         oa.handle = association.handle
         oa.secret = association.secret
-        oa.issued = association.issued
+        oa.issued_at = association.issued_at
         oa.lifetime = association.lifetime
         oa.assoc_type = association.assoc_type
         oa.save
@@ -35,7 +35,7 @@ module OpenID
           return nil unless oas.collect(&:handle).include? handle
           return build_association(oas.find { |oa| oa.handle == handle })
         end
-        oas.sort_by(&:issued).collect { |oa| build_association(oa) }.last
+        oas.sort_by(&:issued_at).collect { |oa| build_association(oa) }.last
       end
 
       # If there is a matching association, remove it from the store and

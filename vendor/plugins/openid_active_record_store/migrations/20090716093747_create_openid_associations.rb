@@ -4,7 +4,7 @@ class CreateOpenidAssociations < ActiveRecord::Migration
     create_table :openid_associations do |t|
 
       # association fields
-      t.datetime :issued
+      t.datetime :issued_at
       t.integer :lifetime
       t.string :assoc_type
       t.text :handle

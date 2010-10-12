@@ -2,12 +2,12 @@
 
 require 'ftools'
 
-# keep everything inside fo this scope
+# keep everything in this scope
 class InstallOpenIdActiveRecordStore
 
   def initialize
     show_banner
-    check_system_cosistency
+    check_system_consistency
     copy_migration_files
   end
 
@@ -23,7 +23,7 @@ class InstallOpenIdActiveRecordStore
     File.join([here, '..', '..', '..', 'db', 'migrate'])
   end
 
-  def validate_file_existance(file)
+  def validate_file_existence(file)
     abort "File not found: #{target}" unless File.exist? file
   end
 
@@ -33,9 +33,9 @@ class InstallOpenIdActiveRecordStore
     '
   end
 
-  def check_system_cosistency
-    validate_file_existance(target)
-    sources.each { |file| validate_file_existance(file) }
+  def check_system_consistency
+    validate_file_existence(target)
+    sources.each { |file| validate_file_existence(file) }
   end
 
   def copy_migration_files
