@@ -28,6 +28,7 @@
 			<strong>Prisklass:</strong>
 			<%= @venue.price %>
 		</p>
+		<% if @reviews.present? %>
 		<p>
 		<div class="rating">
 			<strong>Betyg</strong>
@@ -40,6 +41,7 @@
 		<p class="summary">
 			<%=@venue.summary_review%>
 		</p>
+		<% end %>
 		<%= link_to 'Redigera information', edit_venue_path(@venue), :class => "button inline mobilehide" %>
 	</div>
 </div>
