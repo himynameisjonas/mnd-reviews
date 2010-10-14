@@ -1,9 +1,12 @@
 class VenuesController < ApplicationController
+  before_filter :get_office, :except => [:update, :create]
+  
+  
   # GET /venues
   # GET /venues.xml
   def index
-    @venues = Venue.order(:name).all
-
+    @venues = @office.venues.order(:name)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @venues }
@@ -46,7 +49,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       if @venue.save
-        format.html { redirect_to(@venue, :notice => 'Sparade det nya stället') }
+        format.html { redirect_to(show_venue_path(@venue.office, @venue), :notice => 'Sparade det nya stället') }
         format.xml  { render :xml => @venue, :status => :created, :location => @venue }
       else
         format.html { render :action => "new" }
@@ -62,7 +65,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       if @venue.update_attributes(params[:venue])
-        format.html { redirect_to(@venue, :notice => 'Ändringar uppdaterade') }
+        format.html { redirect_to(show_venue_path(@venue.office, @venue), :notice => 'Ändringar uppdaterade') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

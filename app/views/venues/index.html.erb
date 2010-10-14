@@ -3,7 +3,11 @@
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      initialize_index_map();
+      app.office.settings = {
+        lat: <%= @office.lat %>,
+        lang: <%= @office.lang %>
+      };
+      app.initialize_index_map();
       $("#index_table").tablesorter({sortList: [[0,0]]});
     });
   </script>
@@ -27,14 +31,14 @@
   <tbody>
     <% @venues.each do |venue| %>
       <tr>
-        <td class="nowrap url"><%= link_to venue.name, venue_url(venue) %></td>
+        <td class="nowrap url"><%= link_to venue.name, show_venue_path(@office, venue) %></td>
         <td class="mobilehide nowrap address"><%= venue.adress %></td>
         <td><%= venue.type_of_food %></td>
         <td class="mobilehide"><%= venue.price %></td>
         <td class="mobilehide"><%= venue.latest_review.date if venue.latest_review %></td>
         <td><%= number_with_precision(venue.average_rating, :precision => 1 ) %></td>
-        <td class="mobilehide nowrap"><%= link_to "#{pluralize(venue.total_ratings, "recension", "recensioner")}", venue, :class => "button" %></td>
-        <td class="mobilehide"><%= link_to 'Redigera', edit_venue_path(venue), :class => "button" %></td>
+        <td class="mobilehide nowrap"><%= link_to "#{pluralize(venue.total_ratings, "recension", "recensioner")}", show_venue_path(@office, venue), :class => "button" %></td>
+        <td class="mobilehide"><%= link_to 'Redigera', edit_venue_path(@office, venue), :class => "button" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +46,4 @@
 
 <br />
 
-<%= link_to 'Nytt ställe', new_venue_path, :class => "button inline" %>
+<%= link_to 'Nytt ställe', new_venue_path(), :class => "button inline" %>

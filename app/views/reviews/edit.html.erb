@@ -2,4 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Tillbaka', venue_path(@venue), :class => "button inline" %>
+<%= link_to 'Tillbaka', show_venue_path(@venue.office, @venue), :class => "button inline" %>

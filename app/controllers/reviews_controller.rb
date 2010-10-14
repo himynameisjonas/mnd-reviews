@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_filter :get_office, :except => [:update, :create]
+  
   # GET /reviews
   # GET /reviews.xml
   def index
@@ -24,7 +26,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/new
   # GET /reviews/new.xml
   def new
-    @venue = Venue.find(params[:venue_id])
+    @venue = @office.venues.find(params[:venue_id])
     @review = @venue.reviews.new
 
     respond_to do |format|
@@ -47,7 +49,7 @@ class ReviewsController < ApplicationController
     
     respond_to do |format|
       if @review.save
-        format.html { redirect_to(@venue, :notice => 'Recension sparad') }
+        format.html { redirect_to(show_venue_path(@venue.office, @venue), :notice => 'Recension sparad') }
         format.xml  { render :xml => @venue, :status => :created, :location => @venue }
       else
         format.html { render :action => "new" }
@@ -64,7 +66,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.update_attributes(params[:review])
-        format.html { redirect_to(@venue, :notice => 'Ändringarna av recensionen är sparade') }
+        format.html { redirect_to(show_venue_path(@venue.office, @venue), :notice => 'Ändringarna av recensionen är sparade') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

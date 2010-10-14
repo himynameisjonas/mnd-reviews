@@ -10,7 +10,10 @@
 </head>
 <body>
 <header>
-  <h1><%= link_to "MyNewsdesk lunchrecensioner", root_path %></h1>
+  <h1><%= link_to("MyNewsdesk lunchrecensioner", index_path) %></h1>
+  <section>
+    <%= offices_links %>
+  </section>
 </header>
 <section id="content">
 <%= yield %>

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101008074836) do
+ActiveRecord::Schema.define(:version => 20101014184710) do
+
+  create_table "offices", :force => true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.float    "lat"
+    t.float    "lang"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "reviews", :force => true do |t|
     t.string   "review"
@@ -31,6 +40,9 @@ ActiveRecord::Schema.define(:version => 20101008074836) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "foursquare_id"
+    t.integer  "office_id"
   end
+
+  add_index "venues", ["office_id"], :name => "index_venues_on_office_id"
 
 end

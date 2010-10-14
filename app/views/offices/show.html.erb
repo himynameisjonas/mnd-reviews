@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @office.name %>
+</p>
+
+<p>
+  <b>Permalink:</b>
+  <%= @office.permalink %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @office.lat %>
+</p>
+
+<p>
+  <b>Lang:</b>
+  <%= @office.lang %>
+</p>
+
+
+<%= link_to 'Edit', edit_office_path(@office) %> |
+<%= link_to 'Back', offices_path %>

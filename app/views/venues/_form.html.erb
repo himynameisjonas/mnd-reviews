@@ -1,4 +1,5 @@
 <%= form_for(@venue) do |f| %>
+  <%= f.hidden_field :office_id, :value => @office.id %>
   <% if @venue.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>

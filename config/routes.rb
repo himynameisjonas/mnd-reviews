@@ -1,9 +1,23 @@
 Reviews::Application.routes.draw do
 
+  resources :offices
+
   root :to => "venues#index"
   resources :venues do
     resources :reviews
   end
+  
+  match ':office' => "venues#index", :as => 'index'
+  match ':office/venues/:id' => "venues#show", :as => 'show_venue'
+  match ':office/venues/:id/edit' => "venues#edit", :as => 'edit_venue'
+  match ':office/venue/new' => "venues#new", :as => "new_venue"
+  match ':office/venues/' => "venues#create", :as => 'save_venue'
+  match ':office/venues/:id' => "venues#update", :as => 'save_venue'
+  match ':office/venues/:venue_id/reviews/new/' => "reviews#new", :as => "new_venue_review"
+  match ':office/venues/:venue_id/reviews' => "reviews#create", :as => "create_review"
+  match ':office/venues/:venue_id/reviews/:id/edit' => "reviews#edit", :as => "edit_venue_review"
+  match ':office/venues/:venue_id/reviews/:id' => "reviews#update", :as => "update_venue_review"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

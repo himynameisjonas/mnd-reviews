@@ -4,7 +4,13 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function() {
-            initialize_show_map('<%= @venue.adress %>');
+            app.office.settings = {
+                lat: <%= @office.lat %>,
+                lang: <%= @office.lang %>,
+                name: '<%= @office.name %>',
+                address: '<%= @venue.adress %>'
+            };
+            app.initialize_show_map();
         });
     </script>
 <% end -%>
@@ -42,7 +48,7 @@
 			<%=@venue.summary_review%>
 		</p>
 		<% end %>
-		<%= link_to 'Redigera information', edit_venue_path(@venue), :class => "button inline mobilehide" %>
+		<%= link_to 'Redigera information', edit_venue_path(@office, @venue), :class => "button inline mobilehide" %>
 	</div>
 </div>
 
@@ -66,7 +72,7 @@
     <td class="rating"><%= review.rating %></td>
     <td class="author"><%= review.author %></td>
     <td class="nowrap"><%= review.date %></td>
-    <td class="mobilehide"><%= link_to 'Redigera', edit_venue_review_path(@venue,review), :class => "button" %></td>
+    <td class="mobilehide"><%= link_to 'Redigera', edit_venue_review_path(@office, @venue,review), :class => "button" %></td>
     <td class="mobilehide"><%= link_to 'Radera', venue_review_path(@venue,review), :class => "button", :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -74,5 +80,5 @@
 
 <br />
 
-<%= link_to 'Ny recension', new_venue_review_path(@venue), :class => "button inline" %>
-<%= link_to 'Tillbaka', venues_path, :class => "button inline" %>
+<%= link_to 'Ny recension', new_venue_review_path(@office, @venue), :class => "button inline" %>
+<%= link_to 'Tillbaka', index_path, :class => "button inline" %>

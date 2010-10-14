@@ -27,6 +27,7 @@ pre {
 
 a { color: #f4f2ef; }
 a:hover { color: #fff; background-color:#000; }
+body a:visited{ color: #f4f2ef; }
 
 a.button {
   padding: 5px 8px;
@@ -178,11 +179,30 @@ header h1{
   padding: 13px 20px;
   font-size: 20px;
   font-weight: inherit;
+  width: 50%;
+  float: left;
+}
+
+header section {
+    float: right;
+    padding: 13px 20px;
 }
 
 h1 a {
   color: #BFBFBF;
   text-decoration: none;
+}
+
+header section span {
+    display: inline-block;
+    margin-right: 5px;    
+}
+
+header section a {
+    color: #B8410C;
+}
+header section a:visited {
+    color: #B8410C;
 }
 
 #map_canvas {
