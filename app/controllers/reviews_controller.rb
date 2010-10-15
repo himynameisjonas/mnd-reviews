@@ -4,10 +4,9 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.xml
   def index
-    @reviews = Review.all
+    @reviews = Review.order("created_at desc").limit(params[:limit])
 
     respond_to do |format|
-      format.html # index.html.erb
       format.xml  { render :xml => @reviews }
     end
   end

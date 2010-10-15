@@ -6,6 +6,7 @@ Reviews::Application.routes.draw do
   resources :venues do
     resources :reviews
   end
+  match ':office/latest_reviews' => "reviews#index"
   
   match ':office' => "venues#index", :as => 'index'
   match ':office/venues/:id' => "venues#show", :as => 'show_venue'
