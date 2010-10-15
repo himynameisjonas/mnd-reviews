@@ -5,7 +5,8 @@
     $(document).ready(function() {
       app.office.settings = {
         lat: <%= @office.lat %>,
-        lang: <%= @office.lang %>
+        lang: <%= @office.lang %>,
+        name: <%= @office.name %>
       };
       app.initialize_index_map();
       $("#index_table").tablesorter({sortList: [[0,0]]});
