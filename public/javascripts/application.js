@@ -76,7 +76,7 @@ app.initialize_index_map = function() {
     
     $("td.address").each(function(index){
         var url = $(this).siblings(".url").find("a").attr("href");
-        var adress = $(this).text() + ", stockholm";
+        var adress = $(this).text() + ", " + app.office.settings.name;
         var name = $(this).siblings(".url").find("a").text();
         
         geocoder.geocode( { 'address': adress}, function(results, status) {
