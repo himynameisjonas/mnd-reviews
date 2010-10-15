@@ -3,9 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_offices
   
   def get_offices
-    @offices = Rails.cache.fetch("all-offices") do
-      Office.all
-    end
+    @offices = Office.all
   end
   
   def get_office
